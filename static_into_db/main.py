@@ -63,7 +63,7 @@ class kang:
             #sql = "insert into phone_details values (2020064.0, 5.0, 0.0, 0.945, 3.0, 4.0, 0.026, 94.0, 0.029, 3.0, 142.0, 1220064.0, 38288.0, 2610.0, 4.0, 40898.0, 1160.0, 1160.0, 934.0, 43357.0, 5402.0, 1299.0, 0.0, 365.0);"
             print sql
             ret = self.cursor.execute(sql)
-
+            self.conn.commit()
             # print '\n'
             print "成功插入================================="
             print("sql", sql)
@@ -79,7 +79,7 @@ class kang:
 
     #负责关闭连接对象的游标
     def destr(self):
-        self.conn.commit()
+        
         self.cursor.close()
         self.conn.close()
 
